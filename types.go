@@ -1,7 +1,5 @@
 package main
 
-//Timer
-
 type TimerState int
 
 type Timer struct {
@@ -33,8 +31,6 @@ var stateDuration = map[TimerState]int{
 	StateLongBreak: 20,
 }
 
-//Command
-
 type Command int
 
 const (
@@ -53,7 +49,13 @@ var commandName = map[Command]string{
 	CmdQuit:  "Quit",
 }
 
-//Update
+var commandDefenition = map[string]Command{
+	"s": CmdStart,
+	"p": CmdPause,
+	"r": CmdReset,
+	"k": CmdSkip,
+	"q": CmdQuit,
+}
 
 type Update struct {
 	State     TimerState
